@@ -27,9 +27,42 @@ public class StudentUI {
 		} while(select != 0);
 	}
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }
+
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class ProfessorUI {
+	
+	Student student;
+	
+	public StudentUI(Professor professor, String ID, String pwd) {
+		this.professor = professor;
+		this.professor.logIn(ID, pwd);
+		this.professor.setLecture();
+	}
+	public void StudentMenu()
+	{
+		System.out.println("1.강의 과목 조회");
+		System.out.println("2.시험 조회");
+		
+	}
+	
+	public void StudentSelect(int command) throws SQLException
+	{
+		
+		switch(command) {
+		case 1: System.out.println("수강중인 과목");
+			professor.getLecture();
+		break;
+		case 2: System.out.println("시험 조회");
+		break;
+		
+		}
+	}
+	
+
+}
+
+

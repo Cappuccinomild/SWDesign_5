@@ -2,10 +2,9 @@ public class Course {
 
 	private String lecture_code, lecture_name, 
 		   		   professor_info, lecture_time,
-		   		   lecture_room;
-	private int building_number;
+		   		   lecture_room, building_number;
 	
-	public Course(String lecture_code, String lecture_name, String professor_info, String lecture_time, String lecture_room, int building_number) {
+	public Course(String lecture_code, String lecture_name, String professor_info, String lecture_time, String lecture_room, String building_number) {
 		setLectureCode(lecture_code);
 		setLectureName(lecture_name);
 		setProfessorInfo(professor_info);
@@ -34,15 +33,17 @@ public class Course {
 		this.lecture_room = lecture_room;
 	}
 	
-	public void setBuildingNumber(int building_number) {
+	public void setBuildingNumber(String building_number) {
 		this.building_number = building_number;
 	}
 	
-	
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public void getCourse() {
+		System.out.println(lecture_code + "\t" +
+						   lecture_name + "\t" +
+						   professor_info + "\t" +
+						   lecture_time + "\t" +
+						   lecture_room + "\t" +
+						   building_number);
 	}
-
+	
 }
