@@ -8,42 +8,14 @@ public class Professor extends User{
 		super();
 	}
 
-	private String ProfessorID = "";
-	private ArrayList<Course> lecture = new ArrayList<>();
-	
 	public String getProfessorID() {
-		return ProfessorID;
+		return ID;
 	}
 
 	public void setProfessorID(String professorID) {
-		ProfessorID = professorID;
+		this.ID = professorID;
 	}
 
-	public ArrayList<Course> getLecture() {
-		for(Course course : lecture)
-			course.getCourse();
-		
-		return lecture;
-	}
-
-	public void setLecture() {
-		String sql = "select distinct * from classhour, course where conum = cnumber and course.pnum = '"+this.ProfessorID+"'";
-		ResultSet rs;
-		
-		try {
-			rs = stmt.executeQuery(sql);
-
-			while (rs.next()) {
-				this.lecture.add(new Course(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6)));
-			}
-			rs.close();
-		} catch (SQLException ex2) {
-			System.err.println("sql error = " + ex2.getMessage());
-			System.exit(1);
-		}
-		
-		
-	}
 	
 	public void logIn(String ID, String pwd) {
 		
@@ -72,5 +44,38 @@ public class Professor extends User{
 
 	}
 	
+	public void setLecture() {
+		String sql = "select cnumber, cname, pnum, csdate, cfdate, cday, course_room from classhour, course where conum = cnumber and course.pnum = '"+this.ID+"'";
+		ResultSet rs;
+		
+		try {
+			rs = stmt.executeQuery(sql);
+
+			while (rs.next()) {
+				this.lecture.add(new Course(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
+			}
+			rs.close();
+		} catch (SQLException ex2) {
+			System.err.println("sql lecture error = " + ex2.getMessage());
+			System.exit(1);
+		}
+		
+	}
 	
+	public void setExam() {
+		String sql = "select cnumber, cname, pnum, csdate, cfdate, cday, course_room, esdate, efdate, eday, exam_room from classhour, course, exam where conum = cnumber and cnumber = cnum and course.pnum = '"+this.ID+"'";
+		ResultSet rs;
+		
+		try {
+			rs = stmt.executeQuery(sql);
+
+			while (rs.next()) {
+				this.exam.add(new Exam(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11)));
+			}
+			rs.close();
+		} catch (SQLException ex2) {
+			System.err.println("sql error = " + ex2.getMessage());
+			System.exit(1);
+		}
+	}
 }

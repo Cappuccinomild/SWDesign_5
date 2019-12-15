@@ -13,6 +13,13 @@ public class main {
 		professorui.ProfessorMenu();
 		professorui.ProfessorSelect(Integer.parseInt(scanner.nextLine()));
 		
+		StudentUI studentui = new StudentUI(new Student(), "2017112999", "1234");
+		
+		studentui.StudentMenu();
+		studentui.StudentSelect(Integer.parseInt(scanner.nextLine()));
+		
+		
+		
 	}
 
 }

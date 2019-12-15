@@ -1,5 +1,4 @@
 import java.sql.SQLException;
-import java.util.Scanner;
 
 public class ProfessorUI {
 	
@@ -9,6 +8,7 @@ public class ProfessorUI {
 		this.professor = professor;
 		this.professor.logIn(ID, pwd);
 		this.professor.setLecture();
+		this.professor.setExam();
 	}
 	public void ProfessorMenu()
 	{
@@ -25,6 +25,7 @@ public class ProfessorUI {
 			professor.getLecture();
 		break;
 		case 2: System.out.println("시험 관리 호출");
+			professor.getExam();
 		break;
 		case 3: System.out.println("공지사항 수정 호출");
 		break;

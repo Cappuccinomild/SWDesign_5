@@ -1,46 +1,14 @@
-import java.util.Scanner;
+import java.sql.SQLException;
 
 public class StudentUI {
-
-	public void showMenu()
-	{
-		int select;
-		Scanner keyboard = new Scanner(System.in);
-		
-		do 
-		{
-			System.out.println("메뉴를 선택하세요: 1. ");
-			select = keyboard.nextInt();
-			
-			if(select == 1)
-			{
-				
-			}
-			else if(select == 2)
-			{
-				
-			}
-			else if(select == 3)
-			{
-				
-			}
-		} while(select != 0);
-	}
-	
-
-}
-
-import java.sql.SQLException;
-import java.util.Scanner;
-
-public class ProfessorUI {
 	
 	Student student;
 	
-	public StudentUI(Professor professor, String ID, String pwd) {
-		this.professor = professor;
-		this.professor.logIn(ID, pwd);
-		this.professor.setLecture();
+	public StudentUI(Student student, String ID, String pwd) {
+		this.student = student;
+		this.student.logIn(ID, pwd);
+		this.student.setLecture();
+		this.student.setExam();
 	}
 	public void StudentMenu()
 	{
@@ -51,18 +19,16 @@ public class ProfessorUI {
 	
 	public void StudentSelect(int command) throws SQLException
 	{
-		
 		switch(command) {
 		case 1: System.out.println("수강중인 과목");
-			professor.getLecture();
+			student.getLecture();
 		break;
 		case 2: System.out.println("시험 조회");
+			student.getExam();
 		break;
 		
 		}
 	}
-	
-
 }
 
 

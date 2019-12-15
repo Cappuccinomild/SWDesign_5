@@ -1,8 +1,10 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Scanner;
+import java.util.ArrayList;
+
 
 public class User {
 	public static final String URL = "jdbc:oracle:thin:@localhost:1600:xe";
@@ -10,10 +12,12 @@ public class User {
 	public static final String USER_PASSWD = "oracle";
 	public static final String TABLE_NAME = "TEST";
 
-	public static Scanner scanner;
-	private static String ID = "";
+	public static String ID = "";
 	private static String pwd = "";
-	private static String auth = "";
+	
+	public ArrayList<Course> lecture = new ArrayList<>();
+	public ArrayList<Exam> exam = new ArrayList<>();
+	
 	Connection conn = null; // Connection object
 	Statement stmt = null; // Statement object
 	
@@ -45,5 +49,20 @@ public class User {
 			System.exit(1);
 		}
 	}
+
+	public ArrayList<Course> getLecture() {
+		for(Course course : this.lecture)
+			course.getCourse();
+		
+		return lecture;
+	}
+	
+	public ArrayList<Exam> getExam() {
+		for(Exam exam : this.exam)
+			exam.getExam();
+		
+		return exam;
+	}
+	
 	
 }
