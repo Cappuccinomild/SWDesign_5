@@ -8,7 +8,7 @@ public class main {
 		String ID = "0000";
 		String pwd = "0000";
 		
-		ProfessorUI professorui = new ProfessorUI(new Professor(), ID, pwd);
+		ProfessorUI professorui = new ProfessorUI(new Professor(), ID, pwd, new ExamManagement());
 		
 		professorui.ProfessorMenu();
 		professorui.ProfessorSelect(Integer.parseInt(scanner.nextLine()));

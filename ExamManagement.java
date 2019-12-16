@@ -1,4 +1,3 @@
-package design;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,8 +8,8 @@ import java.util.*;
 
 class ExamManagement {
 	private static final String URL = "jdbc:oracle:thin:@localhost:1600:xe";
-	private static final String USER_KNU = "knu";
-	private static final String USER_PASSWD = "comp322";
+	private static final String USER_KNU = "system";
+	private static final String USER_PASSWD = "oracle";
 	private Connection conn = null; // Connection object
 	private Statement stmt = null; // Statement object
 	private String sql = ""; // an SQL statement

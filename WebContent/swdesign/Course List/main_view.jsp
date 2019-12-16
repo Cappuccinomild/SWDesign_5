@@ -30,12 +30,19 @@
 		<th>시작 시간</th>
 		<th>종료 시간</th>
 		<th>요일</th>
+		<th></th>
 	</tr>
 	
 	<%
 		
-		for(String course : main.GetData(1))
-			out.println(course);	
+		for(String course : main.GetData(1)){
+			out.println(course);
+		}
+	if(main.user.equals("P"))
+		out.println("<script>"+
+					"var size = document.getElementsByName('manage').length;"+
+				    "for(var i = 0; i < size; i++)"+
+				    "    document.getElementsByName('manage')[i].style.display = 'block';</script>");
 	%>
 	
 </table>
@@ -70,8 +77,6 @@
 	<%
 		for (String table : main.GetData(3))//table 생성
 			out.println(table);
-	
-			
 	%>
 	
 </table>

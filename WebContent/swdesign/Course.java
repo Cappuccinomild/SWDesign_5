@@ -47,8 +47,12 @@ public class Course {
 				"<td>"+lecture_room + "</td>"+
 				"<td>"+lecture_stime + "</td>" +
 				"<td>"+lecture_ftime + "</td>" +
-				"<td>"+lecture_date + "</td>" +
-				"</tr>";
+				"<td>"+lecture_date + "</td>"+
+				"<td><div id = '"+lecture_code+"' name = 'manage' style = 'display:none'><form action = '../Exam Manage/Manage.jsp' method = 'post'>" + 
+					"<input type = 'hidden' id = 'course_name' name = 'course_name' value = '"+lecture_code+"'></input>" + 
+					"<input type = 'hidden' id = 'course_number' name = 'course_number' value = '"+lecture_name+"'></input>" +
+					"<input type = 'submit'></input>\r\n" + 
+				"                            </form></div></td></tr>";
 	}
 	
 }

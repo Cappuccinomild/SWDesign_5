@@ -1,0 +1,11 @@
+table {
+   width: 100%;
+
+   border-top: 1px solid #444444;
+   border-collapse: collapse;
+   word-break:break-all;
+ }
+ th, td {
+   border-bottom: 1px solid #444444;
+   text-align:left;
+ }

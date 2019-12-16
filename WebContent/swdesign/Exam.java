@@ -17,6 +17,7 @@ public class Exam extends Course{
 		this.ftime = ftime;
 		this.exam_date = exam_date;
 	}
+	
 	public String getExam() {
 		return	   "<tr style=' border : 1px solid #808080; text-align: center; padding: 10px; ' id=course_text>"+
 				   "<td>"+lecture_code + "</td>" +
