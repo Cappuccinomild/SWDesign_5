@@ -1,0 +1,127 @@
+package design;
+
+import java.sql.*;
+import java.util.*;
+
+public class main {
+
+	public static final String URL = "jdbc:oracle:thin:@localhost:1600:xe";
+	public static final String USER_KNU = "knu";
+	public static final String USER_PASSWD = "comp322";
+	public static final String TABLE_NAME = "TEST";
+
+	public static Scanner scanner;
+	private static String ID = "";
+	private static String pwd = "";
+	private static String auth = "";
+
+	public static void main(String[] args) throws SQLException {
+		Connection conn = null; // Connection object
+		Statement stmt = null; // Statement object
+		String sql = ""; // an SQL statement
+
+		scanner = new Scanner(System.in);
+		int command = 0;
+		int res;
+		ResultSet rs;
+		ResultSetMetaData rsmd;
+		String data = "";
+		ArrayList<String> Menu = new ArrayList<>();
+
+		Scanner scanner = new Scanner(System.in);
+
+		main_menu mm = new main_menu();
+
+		boolean svalid = false;
+		boolean pvalid = false;
+
+		try {
+			// Load a JDBC driver for Oracle DBMS
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			// Get a Connection object
+			System.out.println("Success!");
+		} catch (ClassNotFoundException e) {
+			System.err.println("error = " + e.getMessage());
+			System.exit(1);
+		}
+
+		// Make a connection
+		try {
+			conn = DriverManager.getConnection(URL, USER_KNU, USER_PASSWD);
+		} catch (SQLException ex) {
+			System.err.println("Cannot get a connection: " + ex.getMessage());
+			System.exit(1);
+		}
+		try {
+			conn.setAutoCommit(false); // auto-commit disabled
+			// Create a statement object
+			stmt = conn.createStatement();
+
+		} catch (SQLException ex2) {
+			System.err.println("sql error = " + ex2.getMessage());
+			System.exit(1);
+		}
+
+		while (true) {
+
+			// 로그인
+			boolean login_flag = false;
+
+			while (!login_flag) {
+
+				System.out.println("MENU");
+				System.out.println("로그인 : 1 \t종료 : 2");
+
+				switch (command = Integer.parseInt(scanner.nextLine())) {
+
+				// 로그인
+				case 1:
+					System.out.println("로그인");
+
+					System.out.print("ID : ");
+					ID = scanner.nextLine();
+
+					System.out.print("PASSWORD : ");
+					pwd = scanner.nextLine();
+
+					
+					pvalid = mm.Professor_session(ID, pwd);
+					svalid = mm.Student_session(ID, pwd);
+					
+
+					// 로그인 결과 확인
+					if ((svalid && pvalid) || (!svalid && !pvalid)) {
+						System.out.println("Unvalid ID");
+
+						// command 입력을 다시 받는다
+						command = 0;
+					} else { // valid 할 경우 그대로 놔두면 로그인 while문 을 종료함
+						System.out.println("로그인 성공");
+						login_flag = true;
+					}
+					break;
+				// 프로그램 종료
+				case 2:
+					System.exit(0);
+					break;
+
+				}
+			}
+			while (login_flag) {
+
+				if (pvalid == 1) {// 교수메뉴
+
+					
+
+				} else if (svalid == 1) {// 학생메뉴
+					
+					
+
+				}
+			}
+
+		}
+
+	}
+
+}
