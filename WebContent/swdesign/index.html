@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+  <meta charset='utf-8'/>
+  <title>경북대학교 시험 일정 시스템</title>
+  <link rel='stylesheet' type='text/css' href='style.css'/>
+</head>
+<body>
+  <div style = 'text-align: center; margin : 100px;'><img src = 'logo.jpg' ></img></div>
+  <form action='./Login/login.jsp' method='post'>
+     <table style='width: 450px;background-color: #ffffff; margin-left: auto; margin-right: auto; margin-top: 50px; border-radius: 5px; padding: 20px; height: 200px;'>
+        <tr>
+           <td colspan='2'><input type='text' name='login_id' size='20' class='text-field' style='padding: 10px; width: 94%;' placeholder='아이디'/></td>
+        </tr>
+        <tr>
+           <td colspan='2'><input type='password' name='login_passwd' size='20' class='text-field'  style='padding: 10px; width: 94%;' placeholder='비밀번호'/></td>
+        </tr>
+        <tr>
+           <td colspan='2'><input type='submit' id='login-btn' value='로그인' style='background : red;'/><hr style='margin-top: 5px;'/></td>
+        </tr>
+        <tr>
+        	<td><input type = 'radio' name = 'user' value = 'S' checked='checked'>학생</td><td><input type = 'radio' name = 'user' value = 'P'>교수</td>
+        </tr>
+     </table>
+  </form>
+</body>
+</html>

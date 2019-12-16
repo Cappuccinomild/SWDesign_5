@@ -1,0 +1,57 @@
+package swdesign;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+
+public class Main {
+	public String user = "";
+	ProfessorUI professorui;
+	StudentUI studentui;
+	public boolean Professor_session(String ID, String pwd) throws SQLException {
+		
+		this.professorui = new ProfessorUI(new Professor(), ID, pwd);
+		if(!professorui.valid)
+			return false;
+		this.user = "P";
+		
+		//professorui.ProfessorSelect(Integer.parseInt(scanner.nextLine()));
+		
+		return true;
+	}
+	
+	public boolean Student_session(String ID, String pwd) throws SQLException {
+			
+		this.studentui = new StudentUI(new Student(), ID, pwd);
+		
+		if(!studentui.valid)
+			return false;
+		this.user = "S";
+		
+		//studentui.StudentSelect(Integer.parseInt(scanner.nextLine()));
+		
+		return true;
+	}
+
+	public Object Call_menu() {
+		if(this.user.equals("P")) {
+			return professorui;
+		}
+		else if(this.user.equals("S")) {
+			return studentui;
+		}
+		else
+			return null;
+	}
+	
+	public ArrayList<String> GetData(int num) throws SQLException {
+		if(this.user.equals("P")) {
+			
+			return professorui.ProfessorSelect(num);
+		}
+		else if(this.user.equals("S")) {
+			
+			return studentui.StudentSelect(num);
+		}
+		return null;
+	}
+}

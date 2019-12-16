@@ -1,0 +1,292 @@
+buy_but/* body all */
+* {
+  box-sizing: border-box;
+}
+
+body {
+   margin:0;
+   color:#000000;
+   /*text-align: center;*/
+}
+
+p {
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #000000;
+    font-family: 'malgun gothic', cursive;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+   font-size:16px;
+   font-family: 'malgun gothic', cursive;
+}
+
+a:link, a:visited {
+   text-decoration:none;
+   font-weight:bolder;
+   color: #000000;
+}
+
+a:hover {
+   color:#B1B1CC;
+}
+
+/* container start */
+
+div #container {
+   margin:0 auto;
+}
+
+div .item-style {
+  float: left;
+}
+
+.text-field {
+  font-size: 20px;
+  width: 100%;
+  font-family: 휴먼모음T;
+  color: #000000;
+}
+
+.designer-text-field {
+  font-size: 20px;
+  width: 100%;
+  font-family: 휴먼모음T;
+  color: #000000;
+}
+
+.sub-text {
+   width: 100%;
+   border: none;
+   border-radius: 5px;
+   padding: 10px;
+   margin-bottom: 10px;
+   font-size: 15px;
+   color: #6e6e7f;
+   font-family: 'malgun gothic', cursive;
+}
+
+.text-registi {
+  font-family: 휴먼모음T;
+  font-size: 20px;
+  color: #000000;
+  float: left;
+}
+
+.text-login {
+   font-weight: bold;
+   border: none;
+   border-radius: 5px;;
+   margin-top: 20px;
+   font-size: 20px;
+   color: #000000;
+   font-family: 'malgun gothic', cursive;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.checkbox-registi {
+   font-weight: bold;
+   border: none;
+   border-radius: 5px;;
+   margin-top: 20px;
+   font-size: 20px;
+   color: #000000;
+   font-family: 'malgun gothic', cursive;
+}
+.category-list {
+   list-style-type : none;
+   display: inline-block;
+}
+
+.category-link {
+   display: block;
+   padding: 8px 20px;
+   text-decoration: none;
+   color: #333;
+   font-size: 20px;
+   font-family: 'malgun gothic', cursive;
+   margin-top:-1px;
+}
+
+.category-link:hover {
+   color: #fff;
+   background: #000;
+   font-weight: bold;
+}
+
+.footer-image{
+  margin:0px;
+  text-align: center;
+}
+
+#maintable{
+
+  border-collapse : collapse;
+  table-layout:fixed;
+  border: 1px solid #808080;
+  margin:auto;
+
+}
+#submit-btn {
+   font-size: 20px;
+   font-family: 'malgun gothic', cursive;
+    background-color: #000000;
+   color: white;
+   width: 20%;
+   border-radius: 5px;
+   padding: 10px;
+   border: none;
+}
+
+#login-btn {
+   font-size: 20px;
+   font-family: 'malgun gothic', cursive;
+    background-color: #000000;
+   color: white;
+   width: 100%;
+   border-radius: 5px;
+   padding: 10px;
+   border: none;
+}
+
+#submit-btn:hover {
+   cursor:pointer;
+}
+
+#login-btn:hover {
+   cursor:pointer;
+}
+
+#topbar {
+    background-color: white;
+    overflow: hidden;
+}
+
+#topbar :hover {
+   color:#B1B1CC;
+}
+
+#topbar ul li {
+    display: inline-block;
+    float: right;
+    margin-top: 0px;
+}
+
+#topbar ul li a {
+    color: black;
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 25px;
+    font-family: 'malgun gothic', sans-serif;
+}
+
+#logo {
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 20px;
+   margin-bottom: 20px;
+   text-align: center;
+}
+
+#msg-table-text {
+   font-family: 'malgun gothic', sans-serif;
+   font-weight: bold;
+}
+
+.msg-table-input {
+
+}
+
+#menubar {
+   text-align: center;
+   font-family: 'malgun gothic', sans-serif;
+   border-top-style: solid;
+   border-top-width: 1px;
+   border-top-color: #cacaca;
+   border-bottom-style: solid;
+   border-bottom-width: 1px;
+   border-bottom-color: #cacaca;
+}
+
+.item-table {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+#product-text {
+  font-family: 'malgun gothic', sans-serif;
+}
+
+.item-text {
+  text-align: left;
+  font-weight: bold;
+   border: none;
+   border-radius: 5px;;
+   font-size: 20px;
+   color: #000000;
+   font-family: 'malgun gothic', cursive;
+   margin-left: 30px;
+   float: left;
+}
+
+div.ad_1 {
+   clear:both;
+   background:#fff;
+   text-align:center;
+   padding:10px 0 5px 0;
+   background:#e9eaed;
+   border-radius:10px;
+}
+
+hr {
+   margin-bottom: 0px;
+   margin-top: 0px;
+}
+/* header end */
+
+/* container end */
+
+td {padding:5px;}
+th{padding:5px;}
+
+form {margin:0px;}
+
+a.buy_but {
+	cursor: pointer;
+	display: block;
+	position: relative;
+  text-shadow: ntwo;
+	border: 2px solid #F7CA18;
+	transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+a.buy_but:hover {
+	color: #000 !important;
+	background-color: transparent;
+	text-shadow: ntwo;
+}
+a.buy_but:hover:before {
+	top: 0%;
+	bottom: auto;
+	height: 100%;
+}
+a.buy_but:before {
+	display: block;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	height: 0px;
+	width: 100%;
+	z-index: -1;
+	content: '';
+	color: #000 !important;
+	background: #F7CA18;
+	transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
